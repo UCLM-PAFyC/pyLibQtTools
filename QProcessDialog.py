@@ -134,5 +134,8 @@ class QProcessDialog(QDialog):
         if self.process:
             self.process.kill()
             self.accept()
+        else:
+            self.accept()
+
 
 
