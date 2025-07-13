@@ -8,7 +8,7 @@ from PyQt5 import QtCore
 from PyQt5.uic import loadUi
 import sys, os
 import re
-import time
+import time, datetime
 
 here = os.path.dirname(__file__)
 sys.path.append(os.path.join(here, '.'))
@@ -28,6 +28,19 @@ class QProcessDialog(QDialog):
         self.process = None
         self.terminatePushButton.clicked.connect(self.terminate)
         self.number_of_steps = None
+        self.start_time = None
+        self.end_time = None
+        self.end_date_time = None
+        self.log = ''
+
+    def get_log(self):
+        return self.log
+
+    def get_end_date_time_as_string(self, date_time_string_format):
+        end_date_time_as_string = ''
+        if self.end_date_time:
+            end_date_time_as_string = self.end_date_time.strftime(date_time_string_format)
+        return end_date_time_as_string
 
     def process_state_message(self, s):
         self.processStatePlainTextEdit.appendPlainText(s)
@@ -43,12 +56,18 @@ class QProcessDialog(QDialog):
 
     def standard_output_message(self, s):
         self.standardOutputPlainTextEdit.appendPlainText(s)
+        self.log += ("\n{}".format(s))
 
     def start_process(self,
                       program,
                       arguments,
                       string_to_read_number_of_steps = defs_qprocess.STRING_TO_PUBLISH_THE_NUMBER_OF_STEPS_DEFAULT,
                       string_to_read_completed_steps_percentage = defs_qprocess.STRING_TO_PUBLISH_COMPLETED_STEPS_PERCENTAGE_DEFAULT):
+        self.number_of_steps = None
+        self.start_time = None
+        self.end_time = None
+        self.log = ''
+        self.end_date_time = None
         if self.process is None:  # No process running.
             self.string_to_read_number_of_steps = string_to_read_number_of_steps
             self.string_to_read_completed_steps_percentage = string_to_read_completed_steps_percentage
@@ -107,6 +126,7 @@ class QProcessDialog(QDialog):
         self.process_state_message(str_elapsed_time_in_seconds)
         if self.number_of_steps:
             self.progressBar.setValue(self.number_of_steps)
+        self.end_date_time = datetime.datetime.now()
         self.process = None
 
     def progress_percent_parser(self, output):
