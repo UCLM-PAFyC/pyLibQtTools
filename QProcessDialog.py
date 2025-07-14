@@ -17,7 +17,6 @@ sys.path.append(os.path.join(here, '.'))
 import defs_qprocess
 
 class QProcessDialog(QDialog):
-    """Employee dialog."""
 
     def __init__(self,
                  title,
