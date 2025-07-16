@@ -126,6 +126,7 @@ class QProcessDialog(QDialog):
         if self.number_of_steps:
             self.progressBar.setValue(self.number_of_steps)
         self.end_date_time = datetime.datetime.now()
+        self.terminatePushButton.setText('Close')
         self.process = None
 
     def progress_percent_parser(self, output):
