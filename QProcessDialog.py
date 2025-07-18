@@ -23,7 +23,6 @@ class QProcessDialog(QDialog):
                  parent=None):
         super().__init__(parent)
         loadUi(os.path.join(os.path.dirname(__file__), 'QProcessDialog.ui'), self)
-        # loadUi("lib/InstrumentsDialog.ui", self)
         self.process = None
         self.terminatePushButton.clicked.connect(self.terminate)
         self.number_of_steps = None
@@ -100,12 +99,16 @@ class QProcessDialog(QDialog):
             if max > 0:
                 self.progressBar.setEnabled(True)
                 self.progressBar.setVisible(True)
-                self.progressBar.setRange(min, max)
-                self.number_of_steps = max
+                # self.progressBar.setRange(min, max)
+                self.progressBar.setRange(0, 100)
+                self.number_of_steps = 100
+                # self.number_of_steps = max
+                return
         else:
             progress = self.progress_percent_parser(stdout)
             if progress:
                 self.progressBar.setValue(progress)
+                return
         self.standard_output_message(stdout)
 
     def handle_state(self, state):
