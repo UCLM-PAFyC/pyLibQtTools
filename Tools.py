@@ -12,9 +12,9 @@ sys.path.append(os.path.join(current_path, '..'))
 
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtWidgets import (QApplication, QMessageBox, QDialog, QTreeView,
+from PyQt5.QtWidgets import (QApplication, QMessageBox, QDialog, QTreeView, QLabel,
                              QFileDialog, QPushButton, QComboBox, QPlainTextEdit, QAbstractItemView,
-                             QDialogButtonBox, QVBoxLayout, QTableWidget, QTableWidgetItem)
+                             QDialogButtonBox, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem, QProgressBar)
 from PyQt5.QtCore import QDir, QFileInfo, QFile, QSize
 
 from pyLibQtTools.JsonModel import JsonModel
@@ -47,7 +47,6 @@ class SimpleJSONDialog(QDialog):
         self.treeViewWidget.setAlternatingRowColors(True)
         model.load(value_as_json)
         self.treeViewWidget.resizeColumnToContents(0)
-
 
 class SimpleTextEditDialog(QDialog):
     def __init__(self,
