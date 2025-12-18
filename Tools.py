@@ -19,7 +19,6 @@ from PyQt5.QtCore import QDir, QFileInfo, QFile, QSize
 
 from pyLibQtTools.JsonModel import JsonModel
 
-
 class SimpleJSONDialog(QDialog):
     def __init__(self,
                  title,
