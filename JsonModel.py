@@ -6,8 +6,8 @@ import json
 import sys
 from typing import Any
 
-from PyQt5.QtWidgets import QTreeView, QApplication, QHeaderView
-from PyQt5.QtCore import QAbstractItemModel, QModelIndex, QObject, Qt, QFileInfo
+from qgis.PyQt.QtWidgets import QTreeView, QApplication, QHeaderView
+from qgis.PyQt.QtCore import QAbstractItemModel, QModelIndex, QObject, Qt, QFileInfo
 
 
 class TreeItem:

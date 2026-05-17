@@ -1,9 +1,9 @@
 # authors:
 # David Hernandez Lopez, david.hernandez@uclm.es
 
-from PyQt5.QtWidgets import (QTableWidgetItem, QAbstractScrollArea)
-from PyQt5.QtWidgets import (QTableWidget, QApplication, QSizePolicy)
-from PyQt5.QtCore import Qt
+from qgis.PyQt.QtWidgets import (QTableWidgetItem, QAbstractScrollArea)
+from qgis.PyQt.QtWidgets import (QTableWidget, QApplication, QSizePolicy)
+from qgis.PyQt.QtCore import Qt
 
 class TableWidgetCopyPaste(QTableWidget):
     """

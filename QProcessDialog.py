@@ -1,11 +1,11 @@
 # authors:
 # David Hernandez Lopez, david.hernandez@uclm.es
 
-from PyQt5.QtWidgets import (QDialog, QPushButton, QPlainTextEdit,
+from qgis.PyQt.QtWidgets import (QDialog, QPushButton, QPlainTextEdit,
                                 QVBoxLayout, QWidget, QProgressBar)
-from PyQt5.QtCore import QProcess
-from PyQt5 import QtCore
-from PyQt5.uic import loadUi
+from qgis.PyQt.QtCore import QProcess
+from qgis.PyQt import QtCore
+from qgis.PyQt.uic import loadUi
 import sys, os
 import re
 import time, datetime

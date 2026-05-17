@@ -7,11 +7,11 @@ import sys
 current_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(current_path, '..'))
 
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QComboBox
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QStandardItemModel
+from qgis.PyQt import QtCore, QtWidgets
+from qgis.PyQt.uic import loadUi
+from qgis.PyQt.QtWidgets import QComboBox
+from qgis.PyQt.QtCore import Qt
+from qgis.PyQt.QtGui import QStandardItemModel
 
 # creating checkable combo box class
 class CheckableComboBox(QComboBox):

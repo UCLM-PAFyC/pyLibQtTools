@@ -1,6 +1,6 @@
 import sys, os
-from PyQt5.QtWidgets import (QApplication, QDialog, QPushButton, QLabel, QLineEdit, QGridLayout, QMessageBox)
-from PyQt5.QtGui import QIcon
+from qgis.PyQt.QtWidgets import (QApplication, QDialog, QPushButton, QLabel, QLineEdit, QGridLayout, QMessageBox)
+from qgis.PyQt.QtGui import QIcon
 
 current_path = os.path.dirname(os.path.realpath(__file__))
 images_path = os.path.join(current_path, 'images')

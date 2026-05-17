@@ -1,6 +1,6 @@
 
-from PyQt5.QtWidgets import QDialog, QCalendarWidget
-from PyQt5.QtCore import QDate
+from qgis.PyQt.QtWidgets import QDialog, QCalendarWidget
+from qgis.PyQt.QtCore import QDate
 
 class CalendarDialog(QDialog):
     def __init__(self, parent, title = None, date = None):

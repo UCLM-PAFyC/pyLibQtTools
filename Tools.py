@@ -10,12 +10,12 @@ import json
 current_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(os.path.join(current_path, '..'))
 
-from PyQt5.QtWidgets import QMessageBox
-from PyQt5 import QtCore, QtWidgets
-from PyQt5.QtWidgets import (QApplication, QMessageBox, QDialog, QTreeView, QLabel,
+from qgis.PyQt.QtWidgets import QMessageBox
+from qgis.PyQt import QtCore, QtWidgets
+from qgis.PyQt.QtWidgets import (QApplication, QMessageBox, QDialog, QTreeView, QLabel,
                              QFileDialog, QPushButton, QComboBox, QPlainTextEdit, QAbstractItemView,
                              QDialogButtonBox, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem, QProgressBar)
-from PyQt5.QtCore import QDir, QFileInfo, QFile, QSize
+from qgis.PyQt.QtCore import QDir, QFileInfo, QFile, QSize
 
 from pyLibQtTools.JsonModel import JsonModel
 
@@ -103,7 +103,25 @@ class AbsoluteValueSortedWidgetItem(QtWidgets.QTableWidgetItem):
 
     def __lt__(self, otherItem):
         try:
+            if np.isnan(float(otherItem.text())):
+                return True
+            elif np.isnan(float(self.text())):
+                return False
             return abs(float(self.text())) < abs(float(otherItem.text()))
+        except ValueError:
+            return self.text() < otherItem.text()
+
+class ValueSortedWidgetItem(QtWidgets.QTableWidgetItem):
+    def __init__(self, parent=None):
+        QtWidgets.QTableWidgetItem.__init__(self, parent)
+
+    def __lt__(self, otherItem):
+        try:
+            if np.isnan(float(otherItem.text())):
+                return True
+            elif np.isnan(float(self.text())):
+                return False
+            return float(self.text()) < float(otherItem.text())
         except ValueError:
             return self.text() < otherItem.text()
 

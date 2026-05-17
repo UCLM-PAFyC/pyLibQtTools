@@ -6,11 +6,11 @@ here = os.path.dirname(__file__)
 sys.path.append(os.path.join(here, '.'))
 
 # Import the PyQt and QGIS libraries
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-# from PyQt5 import QtCore,uic
-from PyQt5 import QtGui, QtWidgets, uic
-from PyQt5.QtWidgets import QDialog, QTableWidgetItem, QListWidgetItem, QFileDialog, QMessageBox
+from qgis.PyQt.QtCore import *
+from qgis.PyQt.QtGui import *
+# from qgis.PyQt import QtCore,uic
+from qgis.PyQt import QtGui, QtWidgets, uic
+from qgis.PyQt.QtWidgets import QDialog, QTableWidgetItem, QListWidgetItem, QFileDialog, QMessageBox
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'multiple_file_selector_dialog.ui'))
