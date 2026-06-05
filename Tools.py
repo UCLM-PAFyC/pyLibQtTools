@@ -23,8 +23,9 @@ class SimpleJSONDialog(QDialog):
     def __init__(self,
                  title,
                  value,
-                 readOnly = True):
-        super().__init__()
+                 readOnly = True,
+                 parent = None):
+        super().__init__(parent)
 
         layout = QVBoxLayout()
         self.treeViewWidget = QTreeView(self)
@@ -51,8 +52,9 @@ class SimpleTextEditDialog(QDialog):
     def __init__(self,
                  title,
                  text,
-                 readOnly):
-        super().__init__()
+                 readOnly,
+                 parent = None):
+        super().__init__(parent)
 
         layout = QVBoxLayout()
         self.ptd = QPlainTextEdit(self)
@@ -66,8 +68,9 @@ class SimpleTextEditDialog(QDialog):
     def get_text(self):
         return self.ptd.toPlainText()
 
-def error_msg(str_msg):
-    msgBox = QMessageBox()
+def error_msg(str_msg,
+              parent = None):
+    msgBox = QMessageBox(parent)
     msgBox.setIcon(QMessageBox.Critical)
     msgBox.setWindowTitle('Error:')
     msgBox.setText(str_msg)
@@ -76,8 +79,9 @@ def error_msg(str_msg):
     # msgBox.setDefaultButton(QMessageBox.Save)
     ret = msgBox.exec()
 
-def warning_msg(str_msg):
-    msgBox = QMessageBox()
+def warning_msg(str_msg,
+                parent = None):
+    msgBox = QMessageBox(parent)
     msgBox.setIcon(QMessageBox.Warning)
     msgBox.setWindowTitle('Warning:')
     msgBox.setText(str_msg)
@@ -87,8 +91,9 @@ def warning_msg(str_msg):
     ret = msgBox.exec()
 
 
-def info_msg(str_msg):
-    msgBox = QMessageBox()
+def info_msg(str_msg,
+             parent = None):
+    msgBox = QMessageBox(parent)
     msgBox.setIcon(QMessageBox.Information)
     msgBox.setWindowTitle('Information:')
     msgBox.setText(str_msg)
@@ -98,7 +103,7 @@ def info_msg(str_msg):
     ret = msgBox.exec()
 
 class AbsoluteValueSortedWidgetItem(QtWidgets.QTableWidgetItem):
-    def __init__(self, parent=None):
+    def __init__(self, parent = None):
         QtWidgets.QTableWidgetItem.__init__(self, parent)
 
     def __lt__(self, otherItem):
@@ -112,7 +117,7 @@ class AbsoluteValueSortedWidgetItem(QtWidgets.QTableWidgetItem):
             return self.text() < otherItem.text()
 
 class ValueSortedWidgetItem(QtWidgets.QTableWidgetItem):
-    def __init__(self, parent=None):
+    def __init__(self, parent = None):
         QtWidgets.QTableWidgetItem.__init__(self, parent)
 
     def __lt__(self, otherItem):
@@ -131,7 +136,9 @@ def get_file(dialog_title,
              previous_path,
              file_types,
              file_mode, # 'read', 'append', 'write'
-             mandatory = True):
+             mandatory = True,
+             parent = None
+             ):
     str_error = ''
     file_path = ''
     if dialog_title:
@@ -185,7 +192,7 @@ def get_file(dialog_title,
                 str_files += ' '
             str_files += ("*" + file_types[i])
         str_files += ')'
-    dlg = QFileDialog()
+    dlg = QFileDialog(parent)
     if not dialog_title:
         dialog_title = 'Select file'
     dlg.setWindowTitle(dialog_title)
