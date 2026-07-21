@@ -1,14 +1,9 @@
 # authors:
 # David Hernandez Lopez, david.hernandez@uclm.es
 
-import math
 import numpy as np
 import os, sys
-from scipy import stats as st
 import json
-
-current_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(current_path, '..'))
 
 from qgis.PyQt.QtWidgets import QMessageBox
 from qgis.PyQt import QtCore, QtWidgets

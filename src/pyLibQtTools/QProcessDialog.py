@@ -1,17 +1,15 @@
 # authors:
 # David Hernandez Lopez, david.hernandez@uclm.es
 
-from qgis.PyQt.QtWidgets import (QDialog, QPushButton, QPlainTextEdit,
-                                QVBoxLayout, QWidget, QProgressBar)
+from qgis.PyQt.QtWidgets import (QDialog)
 from qgis.PyQt.QtCore import QProcess
-from qgis.PyQt import QtCore
 from qgis.PyQt.uic import loadUi
 import sys, os
 import re
 import time, datetime
 
 here = os.path.dirname(__file__)
-sys.path.append(os.path.join(here, '.'))
+sys.path.append(os.path.join(here, '../..'))
 
 
 import defs_qprocess

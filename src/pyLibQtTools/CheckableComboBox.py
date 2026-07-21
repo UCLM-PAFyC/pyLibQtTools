@@ -5,7 +5,7 @@ import os
 import sys
 
 current_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(current_path, '..'))
+sys.path.append(os.path.join(current_path, '../../..'))
 
 from qgis.PyQt import QtCore, QtWidgets
 from qgis.PyQt.uic import loadUi
