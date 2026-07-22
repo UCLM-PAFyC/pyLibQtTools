@@ -2,9 +2,6 @@
 
 import sys, os
 
-here = os.path.dirname(__file__)
-sys.path.append(os.path.join(here, ''))
-
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtGui import *

@@ -18,4 +18,5 @@ __all__ = [
     "AbsoluteValueSortedWidgetItem",
     "ValueSortedWidgetItem",
     "get_file",
+    "Tools",
 ]

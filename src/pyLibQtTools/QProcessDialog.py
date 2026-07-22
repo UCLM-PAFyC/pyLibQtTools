@@ -8,10 +8,6 @@ import sys, os
 import re
 import time, datetime
 
-here = os.path.dirname(__file__)
-sys.path.append(os.path.join(here, '../..'))
-
-
 import defs_qprocess
 
 class QProcessDialog(QDialog):
