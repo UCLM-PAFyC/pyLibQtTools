@@ -1,7 +1,5 @@
-from multipleFileSelectorDialog.multiple_file_selector_dialog import MultipleFileSelectorDialog
-from Tools import *
-
 __all__ = [
+    "MultipleFileSelectorDialog",
     "CalendarDialog",
     "CheckableComboBox",
     "defs_qprocess",
@@ -9,14 +7,14 @@ __all__ = [
     "LoginDialog",
     "QProcessDialog",
     "TableWidgetCopyPaste",
-    "MultipleFileSelectorDialog",
-    "SimpleJSONDialog",
-    "SimpleTextEditDialog",
-    "error_msg",
-    "warning_msg",
-    "info_msg",
-    "AbsoluteValueSortedWidgetItem",
-    "ValueSortedWidgetItem",
-    "get_file",
     "Tools",
+    # "Tools.SimpleJSONDialog",
+    # "Tools.SimpleTextEditDialog",
+    # "error_msg",
+    # "warning_msg",
+    # "info_msg",
+    # "AbsoluteValueSortedWidgetItem",
+    # "ValueSortedWidgetItem",
+    # "get_file",
+    # "Tools",
 ]
