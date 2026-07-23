@@ -8,7 +8,7 @@ import sys, os
 import re
 import time, datetime
 
-import defs_qprocess
+from . import defs_qprocess
 
 class QProcessDialog(QDialog):
 
