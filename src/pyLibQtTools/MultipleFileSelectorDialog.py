@@ -10,7 +10,7 @@ from qgis.PyQt import QtGui, QtWidgets, uic
 from qgis.PyQt.QtWidgets import QDialog, QTableWidgetItem, QListWidgetItem, QFileDialog, QMessageBox
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
-    os.path.dirname(__file__), 'pyLibQtTools/MultipleFileSelectorDialog.ui'))
+    os.path.dirname(__file__), 'MultipleFileSelectorDialog.ui'))
 
 class MultipleFileSelectorDialog(QDialog, FORM_CLASS):
     """
