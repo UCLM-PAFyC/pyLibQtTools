@@ -1,14 +1,13 @@
+# authors:
+# David Hernandez Lopez, david.hernandez@uclm.es
+
 # Copyright (C) 2022 The Qt Company Ltd.
 # SPDX-License-Identifier: LicenseRef-Qt-Commercial OR BSD-3-Clause
-from __future__ import annotations
 
-import json
-import sys
+from __future__ import annotations
 from typing import Any
 
-from qgis.PyQt.QtWidgets import QTreeView, QApplication, QHeaderView
 from qgis.PyQt.QtCore import QAbstractItemModel, QModelIndex, QObject, Qt, QFileInfo
-
 
 class TreeItem:
     """A Json item corresponding to a line in QTreeView"""

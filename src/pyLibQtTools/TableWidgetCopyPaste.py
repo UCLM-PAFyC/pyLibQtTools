@@ -12,7 +12,6 @@ class TableWidgetCopyPaste(QTableWidget):
     * formatted specifically to work with multiple-cell paste into programs
       like google sheets, excel, or numbers
     """
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

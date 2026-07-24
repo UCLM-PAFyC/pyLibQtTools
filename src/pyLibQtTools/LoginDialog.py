@@ -1,5 +1,8 @@
-import sys, os
-from qgis.PyQt.QtWidgets import (QApplication, QDialog, QPushButton, QLabel, QLineEdit, QGridLayout, QMessageBox)
+# authors:
+# David Hernandez Lopez, david.hernandez@uclm.es
+
+import os
+from qgis.PyQt.QtWidgets import (QDialog, QPushButton, QLabel, QLineEdit, QGridLayout, QMessageBox)
 from qgis.PyQt.QtGui import QIcon
 
 current_path = os.path.dirname(os.path.realpath(__file__))

@@ -2,17 +2,16 @@
 # David Hernandez Lopez, david.hernandez@uclm.es
 
 import numpy as np
-import os, sys
+import os
 import json
 
-from qgis.PyQt.QtWidgets import QMessageBox
 from qgis.PyQt import QtCore, QtWidgets
 from qgis.PyQt.QtWidgets import (QApplication, QMessageBox, QDialog, QTreeView, QLabel,
                              QFileDialog, QPushButton, QComboBox, QPlainTextEdit, QAbstractItemView,
                              QDialogButtonBox, QVBoxLayout, QHBoxLayout, QTableWidget, QTableWidgetItem, QProgressBar)
 from qgis.PyQt.QtCore import QDir, QFileInfo, QFile, QSize
 
-from pyLibQtTools.JsonModel import JsonModel
+from .JsonModel import JsonModel
 
 class SimpleJSONDialog(QDialog):
     def __init__(self,
@@ -85,7 +84,6 @@ def warning_msg(str_msg,
     # msgBox.setDefaultButton(QMessageBox.Save)
     ret = msgBox.exec()
 
-
 def info_msg(str_msg,
              parent = None):
     msgBox = QMessageBox(parent)
@@ -124,7 +122,6 @@ class ValueSortedWidgetItem(QtWidgets.QTableWidgetItem):
             return float(self.text()) < float(otherItem.text())
         except ValueError:
             return self.text() < otherItem.text()
-
 
 def get_file(dialog_title,
              previous_file,

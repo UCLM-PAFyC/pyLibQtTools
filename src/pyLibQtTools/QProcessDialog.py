@@ -4,14 +4,13 @@
 from qgis.PyQt.QtWidgets import (QDialog)
 from qgis.PyQt.QtCore import QProcess
 from qgis.PyQt.uic import loadUi
-import sys, os
+import os
 import re
 import time, datetime
 
 from . import defs_qprocess
 
 class QProcessDialog(QDialog):
-
     def __init__(self,
                  title,
                  parent=None):

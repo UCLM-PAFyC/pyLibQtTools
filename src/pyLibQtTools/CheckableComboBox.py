@@ -1,11 +1,6 @@
 # authors:
 # David Hernandez Lopez, david.hernandez@uclm.es
 
-import os
-import sys
-
-from qgis.PyQt import QtCore, QtWidgets
-from qgis.PyQt.uic import loadUi
 from qgis.PyQt.QtWidgets import QComboBox
 from qgis.PyQt.QtCore import Qt
 from qgis.PyQt.QtGui import QStandardItemModel

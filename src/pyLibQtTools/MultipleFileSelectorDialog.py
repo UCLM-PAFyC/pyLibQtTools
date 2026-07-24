@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
+# authors:
+# David Hernandez Lopez, david.hernandez@uclm.es
 
-import sys, os
+import os
 
 # Import the PyQt and QGIS libraries
 from qgis.PyQt.QtCore import *

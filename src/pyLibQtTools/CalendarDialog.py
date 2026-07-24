@@ -1,3 +1,5 @@
+# authors:
+# David Hernandez Lopez, david.hernandez@uclm.es
 
 from qgis.PyQt.QtWidgets import QDialog, QCalendarWidget
 from qgis.PyQt.QtCore import QDate
